@@ -1,0 +1,10 @@
+com\example\task_service\types\ObjectFactory.class
+com\example\task_service\types\DeleteTaskRequest.class
+com\example\task_service\types\package-info.class
+com\example\task_service\types\Task.class
+com\example\task_service\types\AddTaskRequest.class
+com\example\task_service\types\MarkTaskCompleteRequest.class
+com\helloworld\babel\Main.class
+com\example\task_service\types\AddTaskResponse.class
+com\example\task_service\types\GetAllTasksResponse.class
+com\example\task_service\types\TaskList.class

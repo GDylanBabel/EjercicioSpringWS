@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="TaskService"
+             targetNamespace="http://example.com/task-service"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:tns="http://example.com/task-service"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+             xmlns:tns1="http://example.com/task-service/types">
+
+    <!-- Messages -->
+    <message name="AddTaskRequest">
+        <part name="name" type="xsd:string"/>
+        <part name="description" type="xsd:string"/>
+    </message>
+
+    <message name="AddTaskResponse">
+        <part name="taskId" type="xsd:int"/>
+    </message>
+
+    <message name="GetAllTasksRequest"/>
+
+    <message name="GetAllTasksResponse">
+        <part name="tasks" type="tns1:TaskList"/>
+    </message>
+
+    <message name="MarkTaskCompleteRequest">
+        <part name="taskId" type="xsd:int"/>
+    </message>
+
+    <message name="MarkTaskCompleteResponse"/>
+
+    <message name="DeleteTaskRequest">
+        <part name="taskId" type="xsd:int"/>
+    </message>
+
+    <message name="DeleteTaskResponse"/>
+
+    <!-- Types -->
+    <types>
+        <xsd:schema targetNamespace="http://example.com/task-service/types">
+            <xsd:complexType name="Task">
+                <xsd:sequence>
+                    <xsd:element name="id" type="xsd:int"/>
+                    <xsd:element name="name" type="xsd:string"/>
+                    <xsd:element name="description" type="xsd:string"/>
+                    <xsd:element name="status" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="TaskList">
+                <xsd:sequence>
+                    <xsd:element name="task" type="tns1:Task" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+
+    <!-- PortType -->
+    <portType name="TaskPortType">
+        <operation name="AddTask">
+            <input message="tns:AddTaskRequest"/>
+            <output message="tns:AddTaskResponse"/>
+        </operation>
+
+        <operation name="GetAllTasks">
+            <input message="tns:GetAllTasksRequest"/>
+            <output message="tns:GetAllTasksResponse"/>
+        </operation>
+
+        <operation name="MarkTaskComplete">
+            <input message="tns:MarkTaskCompleteRequest"/>
+            <output message="tns:MarkTaskCompleteResponse"/>
+        </operation>
+
+        <operation name="DeleteTask">
+            <input message="tns:DeleteTaskRequest"/>
+            <output message="tns:DeleteTaskResponse"/>
+        </operation>
+    </portType>
+
+    <!-- Binding -->
+    <binding name="TaskBinding" type="tns:TaskPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <operation name="AddTask">
+            <soap:operation soapAction="http://example.com/task-service/AddTask"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+
+        <operation name="GetAllTasks">
+            <soap:operation soapAction="http://example.com/task-service/GetAllTasks"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+
+        <operation name="MarkTaskComplete">
+            <soap:operation soapAction="http://example.com/task-service/MarkTaskComplete"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+
+        <operation name="DeleteTask">
+            <soap:operation soapAction="http://example.com/task-service/DeleteTask"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <!-- Service -->
+    <service name="TaskService">
+        <port name="TaskPort" binding="tns:TaskBinding">
+            <soap:address location="http://localhost:8080/task-service"/>
+        </port>
+    </service>
+</definitions>

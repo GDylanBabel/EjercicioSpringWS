@@ -6,6 +6,8 @@
       <list>
         <option value="$PROJECT_DIR$/soapclient/pom.xml" />
         <option value="$PROJECT_DIR$/soapserver/pom.xml" />
+        <option value="$PROJECT_DIR$/todolistclient/pom.xml" />
+        <option value="$PROJECT_DIR$/todolistserver/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

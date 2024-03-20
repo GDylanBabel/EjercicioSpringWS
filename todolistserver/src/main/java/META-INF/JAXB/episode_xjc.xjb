@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="3.0" xmlns="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por Eclipse Implementation of JAXB v3.0.0 
+Visite https://eclipse-ee4j.github.io/jaxb-ri 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2024.03.20 a las 12:46:03 PM CET 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://example.com/task-service/types">
+    <schemaBindings map="false">
+      <package name="com.example.task_service.types"/>
+    </schemaBindings>
+    <bindings scd="tns:AddTaskRequest">
+      <class ref="com.helloworld.babel.types.AddTaskRequest"/>
+    </bindings>
+    <bindings scd="tns:AddTaskResponse">
+      <class ref="com.helloworld.babel.types.AddTaskResponse"/>
+    </bindings>
+    <bindings scd="tns:GetAllTasksResponse">
+      <class ref="com.helloworld.babel.types.GetAllTasksResponse"/>
+    </bindings>
+    <bindings scd="~tns:TaskList">
+      <class ref="com.helloworld.babel.types.TaskList"/>
+    </bindings>
+    <bindings scd="tns:MarkTaskCompleteRequest">
+      <class ref="com.helloworld.babel.types.MarkTaskCompleteRequest"/>
+    </bindings>
+    <bindings scd="tns:DeleteTaskRequest">
+      <class ref="com.helloworld.babel.types.DeleteTaskRequest"/>
+    </bindings>
+    <bindings scd="~tns:Task">
+      <class ref="com.helloworld.babel.types.Task"/>
+    </bindings>
+  </bindings>
+</bindings>
+

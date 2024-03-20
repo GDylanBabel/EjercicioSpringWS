@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://example.com/com/helloworld/babel/types"
+           targetNamespace="http://example.com/com/helloworld/babel/types"
+           elementFormDefault="qualified">
+
+    <xs:complexType name="Task">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/>
+            <xs:element name="status" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TaskList">
+        <xs:sequence>
+            <xs:element name="task" type="Task" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="AddTaskRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="description" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="AddTaskResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="taskId" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetAllTasksRequest"/>
+
+    <xs:element name="GetAllTasksResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="tasks" type="TaskList"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="MarkTaskCompleteRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="taskId" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="MarkTaskCompleteResponse"/>
+
+    <xs:element name="DeleteTaskRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="taskId" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="DeleteTaskResponse"/>
+</xs:schema>
