@@ -6,39 +6,39 @@
 Este archivo ha sido generado por Eclipse Implementation of JAXB v2.3.7 
 Visite https://eclipse-ee4j.github.io/jaxb-ri 
 Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-Generado el: 2024.03.20 a las 08:51:29 AM CET 
+Generado el: 2024.03.20 a las 11:14:53 AM CET 
 
   -->
       
-    <bindings xmlns:tns="http://www.neesis.es/soapserver/ws/user" if-exists="true" scd="x-schema::tns">
+    <bindings xmlns:tns="http://www.dataaccess.com/webservicesserver/" if-exists="true" scd="x-schema::tns">
             
         <schemaBindings map="false">
                   
-            <package name="es.neesis.soapclient.ws.user"/>
+            <package name="es.neesis.soapclient.ws.NumberConversion"/>
                 
         </schemaBindings>
             
-        <bindings if-exists="true" scd="tns:getUserRequest">
+        <bindings if-exists="true" scd="tns:NumberToWords">
                   
-            <class ref="es.neesis.soapclient.ws.user.GetUserRequest"/>
+            <class ref="es.neesis.soapclient.ws.NumberConversion.NumberToWords"/>
                 
         </bindings>
             
-        <bindings if-exists="true" scd="tns:getUserResponse">
+        <bindings if-exists="true" scd="tns:NumberToWordsResponse">
                   
-            <class ref="es.neesis.soapclient.ws.user.GetUserResponse"/>
+            <class ref="es.neesis.soapclient.ws.NumberConversion.NumberToWordsResponse"/>
                 
         </bindings>
             
-        <bindings if-exists="true" scd="~tns:user">
+        <bindings if-exists="true" scd="tns:NumberToDollars">
                   
-            <class ref="es.neesis.soapclient.ws.user.User"/>
+            <class ref="es.neesis.soapclient.ws.NumberConversion.NumberToDollars"/>
                 
         </bindings>
             
-        <bindings if-exists="true" scd="~tns:address">
+        <bindings if-exists="true" scd="tns:NumberToDollarsResponse">
                   
-            <class ref="es.neesis.soapclient.ws.user.Address"/>
+            <class ref="es.neesis.soapclient.ws.NumberConversion.NumberToDollarsResponse"/>
                 
         </bindings>
           

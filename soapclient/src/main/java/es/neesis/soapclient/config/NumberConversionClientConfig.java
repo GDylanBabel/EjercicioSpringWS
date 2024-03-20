@@ -1,12 +1,13 @@
 package es.neesis.soapclient.config;
 
+import es.neesis.soapclient.client.NumberConversionClient;
 import es.neesis.soapclient.client.UserClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
 @Configuration
-public class UserClientConfig {
+public class NumberConversionClientConfig {
 
     @Bean
     public Jaxb2Marshaller marshaller() {
@@ -16,11 +17,12 @@ public class UserClientConfig {
     }
 
     @Bean
-    public UserClient userClient(Jaxb2Marshaller marshaller) {
-        UserClient client = new UserClient();
+    public NumberConversionClient userClient(Jaxb2Marshaller marshaller) {
+        NumberConversionClient client = new NumberConversionClient();
         client.setDefaultUri("https://www.dataaccess.com/webservicesserver/NumberConversion.wso");
         client.setMarshaller(marshaller);
         client.setUnmarshaller(marshaller);
         return client;
     }
+
 }
